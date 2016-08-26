@@ -244,15 +244,30 @@ local function lock_group_spam(msg, data, target)
     return
   end
   if not is_owner(msg) then
-    return "Owners only!"
+	local text = URL.escape('Owners.Only!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'yes' then
-    return 'SuperGroup spam is already locked'
+	local text = URL.escape('Spam.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_spam'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'SuperGroup spam has been locked'
+	local text = URL.escape('Spam.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -262,11 +277,21 @@ local function unlock_group_spam(msg, data, target)
   end
   local group_spam_lock = data[tostring(target)]['settings']['lock_spam']
   if group_spam_lock == 'no' then
-    return 'SuperGroup spam is not locked'
+	local text = URL.escape('Spam.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_spam'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'SuperGroup spam has been unlocked'
+	local text = URL.escape('Spam.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -276,11 +301,21 @@ local function lock_group_flood(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'yes' then
-    return 'Flood is already locked'
+	local text = URL.escape('Flood.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['flood'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Flood has been locked'
+	local text = URL.escape('Flood.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -290,11 +325,21 @@ local function unlock_group_flood(msg, data, target)
   end
   local group_flood_lock = data[tostring(target)]['settings']['flood']
   if group_flood_lock == 'no' then
-    return 'Flood is not locked'
+	local text = URL.escape('Flood.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['flood'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Flood has been unlocked'
+	local text = URL.escape('Flood.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -304,11 +349,21 @@ local function lock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'yes' then
-    return 'Arabic is already locked'
+	local text = URL.escape('Arabic.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Arabic has been locked'
+	local text = URL.escape('Arabic.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -318,11 +373,21 @@ local function unlock_group_arabic(msg, data, target)
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_arabic']
   if group_arabic_lock == 'no' then
-    return 'Arabic/Persian is already unlocked'
+	local text = URL.escape('Arabic.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_arabic'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Arabic/Persian has been unlocked'
+	local text = URL.escape('Arabic.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -332,12 +397,22 @@ local function lock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'yes' then
-    return 'SuperGroup members are already locked'
+	local text = URL.escape('Members.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_member'] = 'yes'
     save_data(_config.moderation.data, data)
   end
-  return 'SuperGroup members has been locked'
+	local text = URL.escape('Members.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 end
 
 local function unlock_group_membermod(msg, data, target)
@@ -346,11 +421,21 @@ local function unlock_group_membermod(msg, data, target)
   end
   local group_member_lock = data[tostring(target)]['settings']['lock_member']
   if group_member_lock == 'no' then
-    return 'SuperGroup members are not locked'
+	local text = URL.escape('Members.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_member'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'SuperGroup members has been unlocked'
+	local text = URL.escape('Members.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -360,11 +445,21 @@ local function lock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'yes' then
-    return 'RTL is already locked'
+	local text = URL.escape('RTL.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'RTL has been locked'
+	local text = URL.escape('RTL.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -374,11 +469,21 @@ local function unlock_group_rtl(msg, data, target)
   end
   local group_rtl_lock = data[tostring(target)]['settings']['lock_rtl']
   if group_rtl_lock == 'no' then
-    return 'RTL is already unlocked'
+	local text = URL.escape('RTL.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_rtl'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'RTL has been unlocked'
+	local text = URL.escape('RTL.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -388,11 +493,21 @@ local function lock_group_tgservice(msg, data, target)
   end
   local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
   if group_tgservice_lock == 'yes' then
-    return 'Tgservice is already locked'
+	local text = URL.escape('Tgservice.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_tgservice'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Tgservice has been locked'
+	local text = URL.escape('Tgservice.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -402,11 +517,21 @@ local function unlock_group_tgservice(msg, data, target)
   end
   local group_tgservice_lock = data[tostring(target)]['settings']['lock_tgservice']
   if group_tgservice_lock == 'no' then
-    return 'TgService Is Not Locked!'
+	local text = URL.escape('Tgservice.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_tgservice'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Tgservice has been unlocked'
+	local text = URL.escape('Tgservice.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -416,11 +541,21 @@ local function lock_group_sticker(msg, data, target)
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
   if group_sticker_lock == 'yes' then
-    return 'Sticker posting is already locked'
+	local text = URL.escape('Sticker.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_sticker'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Sticker posting has been locked'
+	local text = URL.escape('Sticker.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -430,11 +565,21 @@ local function unlock_group_sticker(msg, data, target)
   end
   local group_sticker_lock = data[tostring(target)]['settings']['lock_sticker']
   if group_sticker_lock == 'no' then
-    return 'Sticker posting is already unlocked'
+	local text = URL.escape('Sticker.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_sticker'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Sticker posting has been unlocked'
+	local text = URL.escape('Sticker.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -444,11 +589,21 @@ local function lock_group_contacts(msg, data, target)
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
   if group_contacts_lock == 'yes' then
-    return 'Contact posting is already locked'
+	local text = URL.escape('Contacts.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_contacts'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Contact posting has been locked'
+	local text = URL.escape('Contacts.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -458,11 +613,21 @@ local function unlock_group_contacts(msg, data, target)
   end
   local group_contacts_lock = data[tostring(target)]['settings']['lock_contacts']
   if group_contacts_lock == 'no' then
-    return 'Contact posting is already unlocked'
+	local text = URL.escape('Contacts.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_contacts'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Contact posting has been unlocked'
+	local text = URL.escape('Contacts.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -472,11 +637,21 @@ local function enable_strict_rules(msg, data, target)
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
   if group_strict_lock == 'yes' then
-    return 'Settings are already strictly enforced'
+	local text = URL.escape('Strict.Already.Enabled!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['strict'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Settings will be strictly enforced'
+	local text = URL.escape('Strict.Enabled!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -486,11 +661,21 @@ local function disable_strict_rules(msg, data, target)
   end
   local group_strict_lock = data[tostring(target)]['settings']['strict']
   if group_strict_lock == 'no' then
-    return 'Settings are not strictly enforced'
+	local text = URL.escape('Strict.Already.Disabled!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['strict'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Settings will not be strictly enforced'
+	local text = URL.escape('Strict.Disabled!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 --End supergroup locks
@@ -503,14 +688,24 @@ local function set_rulesmod(msg, data, target)
   local data_cat = 'rules'
   data[tostring(target)][data_cat] = rules
   save_data(_config.moderation.data, data)
-  return 'SuperGroup rules set'
+	local text = URL.escape('Rules Set!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 end
 
 --'Get supergroup rules' function
 local function get_rules(msg, data)
   local data_cat = 'rules'
   if not data[tostring(msg.to.id)][data_cat] then
-    return 'No rules available.'
+	local text = URL.escape('No.Rules.Available!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
   local rules = data[tostring(msg.to.id)][data_cat]
   local group_name = data[tostring(msg.to.id)]['settings']['set_name']
@@ -521,7 +716,12 @@ end
 --Set supergroup to public or not public function
 local function set_public_membermod(msg, data, target)
   if not is_momod(msg) then
-    return "For moderators only!"
+	local text = URL.escape('Moderators.Only!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
   local group_public_lock = data[tostring(target)]['settings']['public']
   local long_id = data[tostring(target)]['long_id']
@@ -530,12 +730,22 @@ local function set_public_membermod(msg, data, target)
 	save_data(_config.moderation.data, data)
   end
   if group_public_lock == 'yes' then
-    return 'Group is already public'
+	local text = URL.escape('Group.Already.Public!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['public'] = 'yes'
     save_data(_config.moderation.data, data)
   end
-  return 'SuperGroup is now: public'
+	local text = URL.escape('Group.Public.Now!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 end
 
 local function unset_public_membermod(msg, data, target)
@@ -549,12 +759,22 @@ local function unset_public_membermod(msg, data, target)
 	save_data(_config.moderation.data, data)
   end
   if group_public_lock == 'no' then
-    return 'Group is not public'
+	local text = URL.escape('Group.Not.Public!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['public'] = 'no'
 	data[tostring(target)]['long_id'] = msg.to.long_id
     save_data(_config.moderation.data, data)
-    return 'SuperGroup is now: not public'
+	local text = URL.escape('Group.Unpublic.Now!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -629,7 +849,12 @@ local function promote2(receiver, member_username, user_id)
   local group = string.gsub(receiver, 'channel#id', '')
   local member_tag_username = string.gsub(member_username, '@', '(at)')
   if not data[group] then
-    return send_large_msg(receiver, 'SuperGroup is not added.')
+	local text = URL.escape('SuperGroup.Not.Added!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
   if data[group]['moderators'][tostring(user_id)] then
     return send_large_msg(receiver, member_username..' is already a moderator.')
@@ -657,11 +882,21 @@ local function modlist(msg)
   local data = load_data(_config.moderation.data)
   local groups = "groups"
   if not data[tostring(groups)][tostring(msg.to.id)] then
-    return 'SuperGroup is not added.'
+	local text = URL.escape('SuperGroup.Not.Added!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
   -- determine if table is empty
   if next(data[tostring(msg.to.id)]['moderators']) == nil then
-    return 'No moderator in this group.'
+	local text = URL.escape('No.Moderator.In.Group!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
   local i = 1
   local message = '\nList of moderators for ' .. string.gsub(msg.to.print_name, '_', ' ') .. ':\n'
@@ -1118,10 +1353,20 @@ local function set_supergroup_photo(msg, success, result)
     channel_set_photo(receiver, file, ok_cb, false)
     data[tostring(msg.to.id)]['settings']['set_photo'] = file
     save_data(_config.moderation.data, data)
-    send_large_msg(receiver, 'Photo saved!', ok_cb, false)
+	local text = URL.escape('Photo.Saved!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     print('Error downloading: '..msg.id)
-    send_large_msg(receiver, 'Failed, please try again!', ok_cb, false)
+	local text = URL.escape('Failed.Try.Again!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -1154,7 +1399,12 @@ local function run(msg, matches)
 				return
 			end
 			if is_super_group(msg) then
-				return reply_msg(msg.id, 'SuperGroup is already added.', ok_cb, false)
+	local text = URL.escape('SuperGroup.Already.Added!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") added")
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] added SuperGroup")
@@ -1165,7 +1415,12 @@ local function run(msg, matches)
 
 		if matches[1] == 'rem' and is_admin1(msg) and not matches[2] then
 			if not is_super_group(msg) then
-				return reply_msg(msg.id, 'SuperGroup is not added.', ok_cb, false)
+	local text = URL.escape('SuperGroup.Not.Added!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") removed")
 			superrem(msg)
@@ -1175,7 +1430,7 @@ local function run(msg, matches)
 		if not data[tostring(msg.to.id)] then
 			return
 		end
-		if matches[1] == "info" then
+		if matches[1] == "gpinfo" then
 			if not is_owner(msg) then
 				return
 			end
@@ -1296,16 +1551,50 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "SuperGroup ID for " ..string.gsub(msg.to.print_name, "_", " ").. ":\n\n"..msg.to.id
+	local text = URL.escape("Your Name: " ..string.gsub(msg.from.print_name, "_", " ").. "\nYour Username: @"..(msg.from.username or '----').."\nYour ID: "..msg.from.id.."\n\nSuperGroup Name: " ..string.gsub(msg.to.print_name, "_", " ").. "\nSuperGroup ID: "..msg.to.id)
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 			end
 		end
 
-		if matches[1] == 'kickme' then
-			if msg.to.type == 'channel' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] left via kickme")
-				channel_kick("channel#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false)
-			end
-		end
+local function run(msg, matches)
+if matches[1] == 'kickme' then
+local hash = 'kick:'..msg.to.id..':'..msg.from.id
+     redis:set(hash, "waite")
+      return 'Are You Sure?\nUse yes or no'
+    end
+
+    if msg.text then
+	local hash = 'kick:'..msg.to.id..':'..msg.from.id
+      if msg.text:match("^yes$") and redis:get(hash) == "waite" then
+	  redis:set(hash, "ok")
+	elseif msg.text:match("^no$") and redis:get(hash) == "waite" then
+	local text = URL.escape('Orders.Canceled!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
+	  redis:del(hash, true)
+
+      end
+    end
+	local hash = 'kick:'..msg.to.id..':'..msg.from.id
+	 if redis:get(hash) then
+        if redis:get(hash) == "ok" then
+         channel_kick("channel#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false)
+	local text = URL.escape('User.Kicked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
+        end
+      end
+    end
 
 		if matches[1] == 'newlink' and is_momod(msg)then
 			local function callback_link (extra , success, result)
@@ -1327,14 +1616,24 @@ local function run(msg, matches)
 		if matches[1] == 'setlink' and is_owner(msg) then
 			data[tostring(msg.to.id)]['settings']['set_link'] = 'waiting'
 			save_data(_config.moderation.data, data)
-			return 'Please send the new group link now'
+	local text = URL.escape('Send.Link.Now!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 		end
 
 		if msg.text then
 			if msg.text:match("^(https://telegram.me/joinchat/%S+)$") and data[tostring(msg.to.id)]['settings']['set_link'] == 'waiting' and is_owner(msg) then
 				data[tostring(msg.to.id)]['settings']['set_link'] = msg.text
 				save_data(_config.moderation.data, data)
-				return "New link set"
+	local text = URL.escape('New.Link.Set!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 			end
 		end
 
@@ -1992,7 +2291,7 @@ local function run(msg, matches)
 		end
 
 		if matches[1] == 'help' and not is_owner(msg) then
-			text = "Message /superhelp to @Teleseed in private for SuperGroup help"
+			text = "Message /superhelp to me in private for SuperGroup help"
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
@@ -2062,14 +2361,14 @@ return {
 	"^[#!/]([Aa]dd)$",
 	"^[#!/]([Rr]em)$",
 	"^[#!/]([Mm]ove) (.*)$",
-	"^[#!/]([Ii]nfo)$",
+	"^[#!/]([Gg]pinfo)$",
 	"^[#!/]([Aa]dmins)$",
 	"^[#!/]([Oo]wner)$",
 	"^[#!/]([Mm]odlist)$",
 	"^[#!/]([Bb]ots)$",
 	"^[#!/]([Ww]ho)$",
 	"^[#!/]([Kk]icked)$",
-    "^[#!/]([Bb]lock) (.*)",
+        "^[#!/]([Bb]lock) (.*)",
 	"^[#!/]([Bb]lock)",
 	"^[#!/]([Tt]osuper)$",
 	"^[#!/]([Ii][Dd])$",
@@ -2110,10 +2409,62 @@ return {
 	"^[#!/]([Hh]elp)$",
 	"^[#!/]([Mm]uteslist)$",
 	"^[#!/]([Mm]utelist)$",
-    "[#!/](mp) (.*)",
-	"[#!/](md) (.*)",
-    "^(https://telegram.me/joinchat/%S+)$",
-	"msg.to.peer_id",
+        "^[#!/](mp) (.*)",
+	"^[#!/](md) (.*)",
+	"^([Aa]dd)$",
+	"^([Rr]em)$",
+	"^([Mm]ove) (.*)$",
+	"^([Gg]pinfo)$",
+	"^([Aa]dmins)$",
+	"^([Oo]wner)$",
+	"^([Mm]odlist)$",
+	"^([Bb]ots)$",
+	"^([Ww]ho)$",
+	"^([Kk]icked)$",
+        "^([Bb]lock) (.*)",
+	"^([Bb]lock)",
+	"^([Tt]osuper)$",
+	"^([Ii][Dd])$",
+	"^([Ii][Dd]) (.*)$",
+	"^([Kk]ickme)$",
+	"^([Kk]ick) (.*)$",
+	"^([Nn]ewlink)$",
+	"^([Ss]etlink)$",
+	"^([Ll]ink)$",
+	"^([Rr]es) (.*)$",
+	"^([Ss]etadmin) (.*)$",
+	"^([Ss]etadmin)",
+	"^([Dd]emoteadmin) (.*)$",
+	"^([Dd]emoteadmin)",
+	"^([Ss]etowner) (.*)$",
+	"^([Ss]etowner)$",
+	"^([Pp]romote) (.*)$",
+	"^([Pp]romote)",
+	"^([Dd]emote) (.*)$",
+	"^([Dd]emote)",
+	"^([Ss]etname) (.*)$",
+	"^([Ss]etabout) (.*)$",
+	"^([Ss]etrules) (.*)$",
+	"^([Ss]etphoto)$",
+	"^([Ss]etusername) (.*)$",
+	"^([Dd]el)$",
+	"^([Ll]ock) (.*)$",
+	"^([Uu]nlock) (.*)$",
+	"^([Mm]ute) ([^%s]+)$",
+	"^([Uu]nmute) ([^%s]+)$",
+	"^([Mm]uteuser)$",
+	"^([Mm]uteuser) (.*)$",
+	"^([Pp]ublic) (.*)$",
+	"^([Ss]ettings)$",
+	"^([Rr]ules)$",
+	"^([Ss]etflood) (%d+)$",
+	"^([Cc]lean) (.*)$",
+	"^([Hh]elp)$",
+	"^([Mm]uteslist)$",
+	"^([Mm]utelist)$",
+        "^(mp) (.*)",
+	"^(md) (.*)",
+        "^(https://telegram.me/joinchat/%S+)$",
 	"%[(document)%]",
 	"%[(photo)%]",
 	"%[(video)%]",
