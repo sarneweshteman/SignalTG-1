@@ -1572,14 +1572,14 @@ local hash = 'kick:'..msg.to.id..':'..msg.from.id
       if msg.text:match("^yes$") and redis:get(hash) == "waite" then
 	  redis:set(hash, "ok")
 	elseif msg.text:match("^no$") and redis:get(hash) == "waite" then
+		redis:del(hash, true)
 	local text = URL.escape('Orders.Canceled!')
         local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
         local fonts = {'mathbf','mathit','mathrm'}
 	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
 	local file = download_to_file(url,'file.webp')
-      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
-	  redis:del(hash, true)
-        end
+        send_document('channel#id'..msg.to.id,file,ok_cb,false)
+
       end
     end
 	local hash = 'kick:'..msg.to.id..':'..msg.from.id
@@ -1591,7 +1591,7 @@ local hash = 'kick:'..msg.to.id..':'..msg.from.id
         local fonts = {'mathbf','mathit','mathrm'}
 	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
 	local file = download_to_file(url,'file.webp')
-      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
+        send_document('channel#id'..msg.to.id,file,ok_cb,false)
         end
       end
     end
