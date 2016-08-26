@@ -39,14 +39,14 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = URL.escape('SuperGroup.has.been.added!')
+	  local text = URL.escape('SuperGroup has been added!')
           local colors = {'blue','green','yellow','magenta','Orange','DarkOrange','red'}
           local fonts = {'mathbf','mathit','mathfrak','mathrm'}
 	  local b = 1
 
   while b ~= 0 do
     textc = text:trim()
-    text,b = text:gsub('.',' ')
+    text,b = text:gsub(' ','.')
 	  local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{700}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
 	  local file = download_to_file(url,'file.webp')
       return send_document('channel#id'..msg.to.id,file,ok_cb,false)
