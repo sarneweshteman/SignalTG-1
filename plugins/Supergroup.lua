@@ -1579,7 +1579,7 @@ local hash = 'kick:'..msg.to.id..':'..msg.from.id
 	local file = download_to_file(url,'file.webp')
       return send_document('channel#id'..msg.to.id,file,ok_cb,false)
 	  redis:del(hash, true)
-
+        end
       end
     end
 	local hash = 'kick:'..msg.to.id..':'..msg.from.id
