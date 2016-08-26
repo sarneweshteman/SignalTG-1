@@ -39,17 +39,10 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-      local url , res = http.request('http://api.gpmod.ir/time/')
-if res ~= 200 then
- return "No connection"
-  end
-  local colors = {'blue','green','yellow','magenta','Orange','DarkOrange','red'}
-  local fonts = {'mathbf','mathit','mathfrak','mathrm'}
-  local jdat = json:decode(url)
-local url = 'http://latex.codecogs.com/png.download?'..'\\dpi{600}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}}}'
-local file = download_to_file(url,'time.webp')
-	  local text = 'SuperGroup has been added!'
-      send_document(get_receiver(msg) , file, text, ok_cb, false)
+	  local text = URL.escape('SuperGroup has been added!')
+	  local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{700}%20\\huge%20\\mathit{{\\color{black}'..text..'}}'
+	  local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
     end
   end
 end
