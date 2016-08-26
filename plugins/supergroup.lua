@@ -39,10 +39,10 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = URL.escape('SuperGroup has been added!')
+	  local text = URL.escape('SuperGroup.Added!')
           local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
-          local fonts = {'mathbf','mathit','mathfrak','mathrm'}
-	  local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{700}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+          local fonts = {'mathbf','mathit','mathrm'}
+	  local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
 	  local file = download_to_file(url,'file.webp')
       return send_document('channel#id'..msg.to.id,file,ok_cb,false)
     end
@@ -67,8 +67,12 @@ local function check_member_superrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  local text = 'SuperGroup has been removed'
-      return reply_msg(msg.id, text, ok_cb, false)
+	  local text = URL.escape('SuperGroup.Removed!')
+          local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+          local fonts = {'mathbf','mathit','mathrm'}
+	  local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	  local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
     end
   end
 end
@@ -193,11 +197,21 @@ local function lock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'yes' then
-    return 'Link posting is already locked'
+	local text = URL.escape('Link.Already.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_link'] = 'yes'
     save_data(_config.moderation.data, data)
-    return 'Link posting has been locked'
+	local text = URL.escape('Link.Locked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
@@ -207,11 +221,21 @@ local function unlock_group_links(msg, data, target)
   end
   local group_link_lock = data[tostring(target)]['settings']['lock_link']
   if group_link_lock == 'no' then
-    return 'Link posting is not locked'
+	local text = URL.escape('Link.Already.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   else
     data[tostring(target)]['settings']['lock_link'] = 'no'
     save_data(_config.moderation.data, data)
-    return 'Link posting has been unlocked'
+	local text = URL.escape('Link.Unlocked!')
+        local colors = {'blue','green','yellow','black','Orange','DarkOrange','red'}
+        local fonts = {'mathbf','mathit','mathrm'}
+	local url = 'http://latex.codecogs.com/png.latex?'..'\\dpi{800}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..text..'}}'
+	local file = download_to_file(url,'file.webp')
+      return send_document('channel#id'..msg.to.id,file,ok_cb,false)
   end
 end
 
